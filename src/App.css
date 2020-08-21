@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.signuppassword {
+  display: none;
+}
+
+.spam-dot {
+  color: red;
+}

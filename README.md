@@ -1,68 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2>This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It is a POC of Honey Pot implementation in ReactJS</h2>
+<br />
 
-## Available Scripts
+<h1>Why Captcha?</h1>
+<h3>It is very important to protect websites from spam bots. For example: Having captcha on registration page doesn't allow to register fake users. More information on [why your website needs captcha] (https://www.tsohost.com/blog/6-reasons-why-your-website-needs-a-captcha-form)</h3>
+<br />
 
-In the project directory, you can run:
+<h1>Limitations with google reCAPTCHA:</h1>
+<h3>As [Google] (www.google.com) is not accessible in china, Google reCAPTCHA V2 and V3 are blocked and users in china could not submit webpages. To fix this issue, [Official google documentation] (https://developers.google.com/recaptcha/docs/faq) suggested to use www.recaptcha.net, which is also blocked in china.</h3>
+<br />
 
-### `npm start`
+<h1>Alternatives with google reCAPTCHA:</h1>
+<h3>There are other popular libraries to implement captcha like [BotDetect] (https://captcha.com/). These libraries are expensive to use. Honey Pot implementation is also one approach to trick spam dots with own implementation.</h3>
+<br />
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h1>For the honey pot implementation considered below:</h1>
+<ul>
+    <li>Field hidden by CSS</li>
+        - Add a CSS style attribute. Example: ```style={{ display: 'none' }}``` or a CSS class to hide field
+    <li>Field hidden by React/JavaScript</li>
+    <li>Feld requiring a blank input</li>
+    <li>Field requiring a specific input</li>
+    <li>No-autocompletion on honeypot fields</li>
+    <li>Honeypot fields can't be navigated to via the Tab key</li>
+    <li>Include honeypot fields in form validation</li>
+</ul>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+You may either add each field with above 
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<h1>Sources:</h1>
+<h3>https://stackoverflow.com/questions/16861325/honeypot-implementation</h3>
+<h3>https://stackoverflow.com/questions/36227376/better-honeypot-implementation-form-anti-spam</h3>
+<h3>https://stackoverflow.com/questions/3622433/how-effective-is-the-honeypot-technique-against-spam</h3>
+<h3>https://dev.to/felipperegazio/how-to-create-a-simple-honeypot-to-protect-your-web-forms-from-spammers--25n8</h3>
