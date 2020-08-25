@@ -43,12 +43,9 @@ class App extends Component {
         validationSchema={schema}
         onSubmit={async (values, { setSubmitting }) => {
           console.log(`this.timer.getTimeSpent: ${this.timer.getTimeSpent()}`);
-          const { honeybotEmail, honeybotUsername, honeybotPassword } = values;
-          console.log(`honeybotEmail: ${honeybotEmail}`);
-          console.log(`honeybotUsername: ${honeybotUsername}`);
-          console.log(`honeybotPassword: ${honeybotPassword}`);
+          const { honeypotEmail, honeypotUsername, honeypotPassword } = values;
           const timeSpent = this.timer.getTimeSpent();
-          if (timeSpent < 30 || honeybotEmail !== '' || honeybotUsername !== 'username' || honeybotPassword !== '') {
+          if (timeSpent < 30 || honeypotEmail !== '' || honeypotUsername !== 'username' || honeypotPassword !== '') {
             return this.displayHoneyPotError();
             // setSubmitting(true); // Do not submit form
           } else {
@@ -64,26 +61,26 @@ class App extends Component {
               <ErrorMessage name="name" />
               <br />
 
-              {/* Honeybot Field hidden with CSS. Expects always empty value */}
+              {/* honeypot Field hidden with CSS. Expects always empty value */}
               <input type="text" name="signupemail" placeholder="Email" style={{ display: 'none' }} 
-                    autoComplete="off" tabIndex="-1" value={formikProps.values.honeybotEmail} />
-              <ErrorMessage name="honeybotEmail" />
+                    autoComplete="off" tabIndex="-1" value={formikProps.values.honeypotEmail} />
+              <ErrorMessage name="honeypotEmail" />
               <Field type="text" name="email" placeholder="Email" value={formikProps.values.email} />
               <ErrorMessage name="email" />
               <br />
 
-              {/* Honeybot Field hidden with JS. Always expects specific value 'username' */}
+              {/* honeypot Field hidden with JS. Always expects specific value 'username' */}
               <input type="text" name="signupusername" placeholder="Username" ref={this.textInput}
-                    autoComplete="off" tabIndex="-1" value={formikProps.values.honeybotUsername} />
-              <ErrorMessage name="honeybotUsername" />
+                    autoComplete="off" tabIndex="-1" value={formikProps.values.honeypotUsername} />
+              <ErrorMessage name="honeypotUsername" />
               <Field type="text" name="userName" placeholder="Username" value={formikProps.values.userName} />
               <ErrorMessage name="userName" />
               <br />
 
-              {/* Honeybot Field hidden with CSS classname. Always expects null value */}
+              {/* honeypot Field hidden with CSS classname. Always expects null value */}
               <input className="signuppassword" type="password" name="signuppassword" placeholder="Password"
-                      autoComplete="off" tabIndex="-1" value={formikProps.values.honeybotPassword} />
-              <ErrorMessage name="honeybotPassword" />
+                      autoComplete="off" tabIndex="-1" value={formikProps.values.honeypotPassword} />
+              <ErrorMessage name="honeypotPassword" />
               <Field type="password" name="password" placeholder="Password" value={formikProps.values.password} />
               <ErrorMessage name="password" />
               <br />
@@ -91,11 +88,6 @@ class App extends Component {
               <Field type="password" name="confirmPassword" placeholder="Confirm Password" value={formikProps.values.confirmPassword} />
               <ErrorMessage name="confirmPassword" />
               
-              {/* Test */}
-              {/* <Field type="text" name="signup_email" placeholder="Email" autoComplete="off" value={formikProps.values.username} />
-              <Field type="text" name="signup_pwd" placeholder="Password" autoComplete="off" value={formikProps.values.username} />
-              <Field type="text" name="signup_conf_pwd" placeholder="Confirm Password" autoComplete="off" value={formikProps.values.username} />
-              <Field type="text" name="signup_username" placeholder="Username" autoComplete="off" value={formikProps.values.username} /> */}
               <br />
               <button type="submit">Submit</button>
             </Form>

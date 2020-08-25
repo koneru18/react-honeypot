@@ -17,9 +17,9 @@ export const InitialValues = {
   userName: 'test123',
   password: 'admin123',
   confirmPassword: 'admin123',
-  honeybotEmail: '',
-  honeybotUsername: 'username',
-  honeybotPassword: '',
+  honeypotEmail: '',
+  honeypotUsername: 'username',
+  honeypotPassword: '',
 };
 
 export const schema = Yup.object().shape({
@@ -40,9 +40,9 @@ export const schema = Yup.object().shape({
   confirmPassword: Yup.string()
     .required('Confirm Password is required')
     .oneOf([Yup.ref('password'), null], 'Passwords must match'),
-  honeybotEmail: Yup.string().email(),
-  honeybotUsername: Yup.string(),
-  honeybotPassword: Yup.string(),
+  honeypotEmail: Yup.string().email(),
+  honeypotUsername: Yup.string(),
+  honeypotPassword: Yup.string(),
 });
 
 // export const InitialValues = schema.cast();
